@@ -27,12 +27,12 @@ function HeroSection() {
   );
 
   return (
-    <div className="min-h-screen bg-black overflow-hidden relative rounded-b-[50px]">
+    <div className="min-h-[77vh] bg-black overflow-hidden relative rounded-b-[50px]">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-purple-900/20 z-0"></div>
 
       {/* Main content */}
-      <div className="container mx-auto px-4 py-16  relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center text-center mt-16 mb-32">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
@@ -46,43 +46,52 @@ function HeroSection() {
           </p>
         </div>
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 overflow-hidden relative lg:-mb-[100px]">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-3xl border border-gray-800 bg-black/40 h-64 transform transition-transform hover:scale-105  "
-            >
-              {/* Card background image with overlay */}
-              <div className="absolute inset-0 opacity-20">
-                <img
-                  src={card.bgImage}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        {/* Container for the cards */}
+        <div className="relative lg:pb-40">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:-mb-52 -mt-[210px]">
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                className={`relative overflow-hidden rounded-3xl border border-gray-800 bg-black/40 h-64 transform transition-transform hover:scale-105 ${
+                  card.title === 'Brilliance' 
+                    ? 'relative z-20 -translate-y-1/2' 
+                    : 'absolute bottom-0 translate-y-1/2'
+                }`}
+                style={{
+                  left: card.title === 'Brilliance' ? '50%' : 'auto',
+                  transform: card.title === 'Brilliance' 
+                    ? 'translate(-50%, 50%)' 
+                    : 'translateY(50%)'
+                }}
+              >
+                {/* Card background image with overlay */}
+                <div className="absolute inset-0 opacity-20">
+                  <img
+                    src={card.bgImage}
+                    alt={card.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              {/* Purple glow effect */}
-              {/* <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-600/30 rounded-full filter blur-3xl"></div> */}
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col p-6">
+                  <h3 className="text-white text-2xl font-bold">{card.title}</h3>
 
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col p-6">
-                <h3 className="text-white text-2xl font-bold">{card.title}</h3>
-
-                {/* Persona image */}
-                <div className="mt-auto lg:mt-8">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full overflow-hidden border-2 border-purple-500/50">
-                    <div className="w-full h-full flex items-center justify-center text-xl">
-                      {card.icon}
+                  {/* Persona image */}
+                  <div className="mt-auto lg:mt-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full overflow-hidden border-2 border-purple-500/50">
+                      <div className="w-full h-full flex items-center justify-center text-xl">
+                        {card.icon}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Icon */}
-              {renderIcon()}
-            </div>
-          ))}
+                {/* Icon */}
+                {renderIcon()}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
