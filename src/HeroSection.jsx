@@ -18,9 +18,9 @@ const HeroSection = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="flex  justify-center gap-4 w-full max-w-6xl">
+      <div className="flex  justify-center gap-4 w-full  max-w-6xl">
         {/* Card 1: Innovative */}
-        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800">
+        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800 hidden lg:block">
           <div className="absolute inset-0 p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start">
               <h2 className="text-2xl font-bold">Innovative</h2>
@@ -36,12 +36,12 @@ const HeroSection = () => {
         </div>
 
         {/* Card 2: Epic */}
-        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800">
+        <div className="relative  w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800">
           <div className="absolute inset-0 p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start">
-              <h2 className="text-2xl font-bold">Epic</h2>
-              <div className="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin"></div>
+              <h2 className="text-2xl font-bold hidden lg:block">Epic</h2>
+              <div className="w-6 h-6 rounded-full bg-purple-600 lg:flex items-center justify-center hidden">
+                <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin hidden lg:block"></div>
               </div>
             </div>
             <div className="flex justify-center items-center h-32">
@@ -52,7 +52,7 @@ const HeroSection = () => {
         </div>
 
         {/* Card 3: Brilliance - Highlighted */}
-        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-blue-500 shadow-lg shadow-blue-500/50 lg:top-28 ">
+        <div className="relative lg:w-64 h-64 md:w-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-blue-500 shadow-lg shadow-blue-500/50 lg:top-28 z-[1] top-48 w-[48rem]">
           <div className="absolute inset-0 p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start">
               <h2 className="text-2xl font-bold">Brilliance</h2>
@@ -91,9 +91,9 @@ const HeroSection = () => {
         <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800">
           <div className="absolute inset-0 p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start">
-              <h2 className="text-2xl font-bold">Genius</h2>
-              <div className="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin"></div>
+              <h2 className="text-2xl font-bold hidden lg:block">Genius</h2>
+              <div className="w-6 h-6 rounded-full bg-purple-600 lg:flex items-center justify-center hidden ">
+                <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin hidden lg:block"></div>
               </div>
             </div>
             <div className="flex justify-center items-center h-32">
@@ -104,7 +104,7 @@ const HeroSection = () => {
         </div>
 
         {/* Card 5: Creative */}
-        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800">
+        <div className="relative w-64 h-64 bg-gradient-to-b from-black to-gray-900 rounded-3xl overflow-hidden border border-gray-800 hidden lg:block">
           <div className="absolute inset-0 p-6 flex flex-col justify-between">
             <div className="flex justify-between items-start">
               <h2 className="text-2xl font-bold">Creative</h2>
